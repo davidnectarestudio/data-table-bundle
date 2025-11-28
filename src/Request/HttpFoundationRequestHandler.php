@@ -48,7 +48,7 @@ class HttpFoundationRequestHandler implements RequestHandlerInterface
 
         $form = $dataTable->createFiltrationFormBuilder()->getForm();
 
-        if ($data = $request->get($form->getName())) {
+        if ($data = $request->attributes->get($form->getName())) {
             $form->submit($data);
         }
 
@@ -105,7 +105,7 @@ class HttpFoundationRequestHandler implements RequestHandlerInterface
 
         $form = $dataTable->createPersonalizationFormBuilder()->getForm();
 
-        if ($data = $request->get($form->getName())) {
+        if ($data = $request->attributes->get($form->getName())) {
             $form->submit($data);
         }
 
@@ -122,7 +122,7 @@ class HttpFoundationRequestHandler implements RequestHandlerInterface
 
         $form = $dataTable->createExportFormBuilder()->getForm();
 
-        if ($data = $request->get($form->getName())) {
+        if ($data = $request->attributes->get($form->getName())) {
             $form->submit($data);
         }
 
